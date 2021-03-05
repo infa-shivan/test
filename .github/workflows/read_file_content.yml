@@ -34,9 +34,9 @@ jobs:
 #      - name: check for specific value
       - run: |
           str="${{ steps.fc.outputs.content }}"
-          if [ $str = "Version" ]; then
+          if [ $str = "Version1" ]; then
               echo "Specific string Found"
           else
-              echo ERROR: specific string not sound 1>&2
+              echo ERROR: pattern not sound reject the pull request 1>&2
                   exit 1 # terminate and indicate error
           fi
