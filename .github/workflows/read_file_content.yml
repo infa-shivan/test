@@ -37,5 +37,6 @@ jobs:
           if [ $str = "Version" ]; then
               echo "Specific string Found"
           else
-              echo "NOT Found"
+              echo ERROR: specific string not sound 1>&2
+                  exit 1 # terminate and indicate error
           fi
