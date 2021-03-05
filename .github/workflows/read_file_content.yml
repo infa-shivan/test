@@ -28,6 +28,6 @@ jobs:
         id: fc
         uses: juliangruber/read-file-action@v1
         with:
-          path: ./test.py
-      - name: Echo test.py
+          path: test.py
+      - name: Print file content
         run: echo ${{ steps.fc.outputs.content }}
