@@ -23,11 +23,11 @@ jobs:
     # Steps represent a sequence of tasks that will be executed as part of the job
     steps:
       - uses: actions/checkout@v2
-      - name: set file content to variable
+      - name: read file content
         id: fc
 #        run: echo "::set-output name=content::$(cat test.py)"
         uses: juliangruber/read-file-action@v1
         with:
           path: test.py
       - name: Print file content
-        run: echo ${{ steps.fc.outputs.content }}
+        run: echo "${{ steps.fc.outputs.content }}"
