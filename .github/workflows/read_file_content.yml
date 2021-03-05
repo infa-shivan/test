@@ -25,9 +25,9 @@ jobs:
       - uses: actions/checkout@v2
       - name: set file content to variable
         id: fc
-        run: echo "::set-output name=content::$(cat test.py)"
-#        uses: juliangruber/read-file-action@v1
-#        with:
-#          path: test.py
+#        run: echo "::set-output name=content::$(cat test.py)"
+        uses: juliangruber/read-file-action@v1
+        with:
+          path: test.py
       - name: Print file content
         run: echo ${{ steps.fc.outputs.content }}
