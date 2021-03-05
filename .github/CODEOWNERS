@@ -25,4 +25,5 @@
 
 # Windows forms areas:
 # /windowsforms/** @adegeo @dotnet/dotnet-winforms
-*.py @bhurs@informatica.com
+#*.py @bhurs@informatica.com
+*.py @shivan@informatica.com
