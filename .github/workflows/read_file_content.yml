@@ -29,8 +29,8 @@ jobs:
         uses: juliangruber/read-file-action@v1
         with:
           path: test.py
-      - name: Print file content
-        run: echo "${{ steps.fc.outputs.content }}"
+#      - name: Print file content
+#        run: echo "${{ steps.fc.outputs.content }}"
       - name: check for specific value
         run: |
           if [[ steps.fc.outputs.val == "Version" ]]
