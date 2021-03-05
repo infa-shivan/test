@@ -33,7 +33,7 @@ jobs:
 #        run: echo "${{ steps.fc.outputs.content }}"
 #      - name: check for specific value
       - run: |
-          if [[ "${{ steps.fc.outputs.content }}" == "Version" ]]
+          if [[ "${{ steps.fc.outputs.content }}" = "Version" ]]
             then
               echo "Specific string Found"
           else
