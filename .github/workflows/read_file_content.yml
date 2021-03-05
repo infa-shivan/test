@@ -26,8 +26,9 @@ jobs:
         uses: actions/checkout@v2
       - name: Read file content
         id: fc
-        uses: juliangruber/read-file-action@v1
-        with:
-          path: test.py
+        run: echo "::set-output name=data::$(cat test.py)"
+#        uses: juliangruber/read-file-action@v1
+#        with:
+#          path: test.py
       - name: Print file content
-        run: echo ${{ steps.fc.outputs.content }}
+        run: echo ${{ steps.fc.outputs.data }}
