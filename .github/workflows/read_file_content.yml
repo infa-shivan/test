@@ -25,7 +25,7 @@ jobs:
       - uses: actions/checkout@v2
       - name: read file content
         id: fc
-        run: echo "::set-output name=val::$(cat test.py)"
+#        run: echo "::set-output name=val::$(cat test.py)"
         uses: juliangruber/read-file-action@v1
         with:
           path: test.py
@@ -33,7 +33,7 @@ jobs:
 #        run: echo "${{ steps.fc.outputs.content }}"
 #      - name: check for specific value
       - run: |
-          if [[ steps.fc.outputs.val == "Version" ]]
+          if [[ steps.fc.outputs.content == "Version" ]]
             then
               echo "Specific string Found"
           else
