@@ -32,7 +32,7 @@ jobs:
       - name: Print file content
         run: echo "${{ steps.fc.outputs.content }}"
       - name: check for specific value
-        run:
+        run: |
         if [[ steps.fc.outputs.content == "Version" ]]
           then
             echo "Specific string Found"
