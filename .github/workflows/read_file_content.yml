@@ -22,10 +22,11 @@ jobs:
 
     # Steps represent a sequence of tasks that will be executed as part of the job
     steps:
+      - name: Checkout code
+        uses: actions/checkout@v2
       - name: Read file content
         id: fc
         uses: juliangruber/read-file-action@v1
-        uses: actions/checkout@v2
         with:
           path: ./test.py
       - name: Echo test.py
