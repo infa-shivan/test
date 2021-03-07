@@ -10,9 +10,9 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Find in commit messages
-          uses: atlassian/gajira-find-issue-key@master
-          with:
-            from: commits
+        uses: atlassian/gajira-find-issue-key@master
+        with:
+          from: commits
 #      - name: Check Commit Type
 #        uses: gsactions/commit-message-checker@v1
 #        with:
