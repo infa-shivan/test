@@ -1,6 +1,6 @@
 # This is a basic workflow to help you get started with Actions
 
-name: Read file content
+name: Read file content check for speicific string
 
 # Controls when the action will run. 
 on:
@@ -28,13 +28,13 @@ jobs:
 #        run: echo "::set-output name=val::$(cat test.py)"
         uses: juliangruber/read-file-action@v1
         with:
-          path: test.py
+          path: test.py # this file is present in root
 #      - name: Print file content
 #        run: echo "${{ steps.fc.outputs.content }}"
 #      - name: check for specific value
       - run: |
           str="${{ steps.fc.outputs.content }}"
-          if [ $str = "Version1" ]; then
+          if [ $str = "Version" ]; then
               echo "Specific string Found"
           else
               echo ERROR: pattern not sound reject the pull request 1>&2
