@@ -1,35 +1,12 @@
-name: 'Read Jira ticket from commit message'
+name: list PR commit messages
 on:
-  push:
-    branches:
-      - main
+ pull_request:
+   branches: [main]
 
 jobs:
-  check-commit-message:
-    name: Check Commit Message
+  build:
     runs-on: ubuntu-latest
     steps:
-      - name: Find in commit messages
-        uses: atlassian/gajira-find-issue-key@master
-        with:
-          from: commits
-#      - name: Check Commit Type
-#        uses: gsactions/commit-message-checker@v1
-#        with:
-#          pattern: '\[[^]]+\] .+$'
-#          flags: 'gm'
-#          error: 'Your first line has to contain a commit type like "[BUGFIX]".'
-#      - name: Check Line Length
-#        uses: gsactions/commit-message-checker@v1
-#        with:
-#          pattern: '^[^#].{74}'
-#          error: 'The maximum line length of 74 characters is exceeded.'
-#          excludeDescription: 'true' # optional: this excludes the description body of a pull request
-#          excludeTitle: 'true' # optional: this excludes the title of a pull request
-#          checkAllCommitMessages: 'true' # optional: this checks all commits associated with a pull request
-#          accessToken: ${{ secrets.GITHUB_TOKEN }} # github access token is only required if checkAllCommitMessages is true
-#      - name: Check for Resolves / Fixes
-#        uses: gsactions/commit-message-checker@v1
-#        with:
-#          pattern: '^.+(JiraIssueID:): \#[0-9]+$'
-#          error: 'You need at least one "Resolves|Fixes: #<issue number>" line.'
+     - name: List the SHA and commit message for every commit of the PR
+       run: |
+          curl -H 'Authorization: Bearer ${{ secrets.GITHUB_TOKEN }}' https://api.github.com/repos/${{ github.repository }}/pulls/${{ github.event.pull_request.number }}/commits | jq -r  '.[] | [.sha,.commit.message]' "
