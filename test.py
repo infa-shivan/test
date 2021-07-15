@@ -5,7 +5,7 @@
 num1 = 10
 num2 = 14
 num3 = 12
-
+#tes jira issue checker
 # uncomment following lines to take three numbers from user
 #num1 = float(input("Enter first number: "))
 #num2 = float(input("Enter second number: "))
