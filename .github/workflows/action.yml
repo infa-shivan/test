@@ -8,7 +8,7 @@ jobs:
   publish:
     runs-on: ubuntu-latest
     steps:
-      - uses: fgiuliani/jira-issue-key-checker@main
+      - uses: fgiuliani/jira-issue-key-checker@v1
         with:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           jira-prefix: 'PLAT'
