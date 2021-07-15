@@ -10,4 +10,4 @@ jobs:
     - name: Find jira in commit messages
       uses: atlassian/gajira-find-issue-key@master
       with:
-        from: commits
+        string: ${{ github.event_name == 'push'  }}
