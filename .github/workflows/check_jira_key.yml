@@ -1,0 +1,13 @@
+name: "Find jira key"
+on:
+  push:
+    branches: [main]
+  
+jobs:
+  check_jira:
+    runs-on: ubuntu-latest
+    steps:
+    - name: Find jira in commit messages
+      uses: atlassian/gajira-find-issue-key@master
+      with:
+        from: commits
