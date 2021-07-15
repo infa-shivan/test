@@ -1,11 +1,8 @@
 name: "Jira Issue Key Checker"
 on:
   pull_request:
-    types:
-      - opened
-      - edited
-      - synchronize
-      - reopened
+    branches: [main]
+  
 
 jobs:
   publish:
