@@ -1,6 +1,6 @@
 name: "Find jira key"
 on:
-  push:
+  pull_request:
     branches: [main]
   
 jobs:
